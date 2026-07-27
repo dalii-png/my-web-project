@@ -162,8 +162,8 @@ const rawQuestions: Omit<Question, "id">[] = [
   { category:"自我介绍", question:"请做一个1分钟自我介绍。", priority:"S级", answer:"", keywords:[], status:"未准备", confidence:0, note:"" },
   { category:"跨专业动机", question:"为什么从经济学跨保应用统计？", priority:"S级", answer:"", keywords:[], status:"未准备", confidence:0, note:"" },
   { category:"跨专业动机", question:"为什么不继续读经济学？", priority:"A级", answer:"", keywords:[], status:"未准备", confidence:0, note:"" },
-  { category:"本科成绩", question:"你的排名是9/38，为什么不是前5%？", priority:"S级", answer:"", keywords:[], status:"未准备", confidence:0, note:"" },
-  { category:"本科成绩", question:"六级546分是否会影响研究生阶段学习？", priority:"A级", answer:"", keywords:[], status:"未准备", confidence:0, note:"" },
+  { category:"本科成绩", question:"你的排名为什么不是前5%？", priority:"S级", answer:"", keywords:[], status:"未准备", confidence:0, note:"" },
+  { category:"本科成绩", question:"六级分数是否会成为面试中的短板？", priority:"A级", answer:"", keywords:[], status:"未准备", confidence:0, note:"" },
   { category:"药品集采论文", question:"两篇论文没有发表，如何证明论文质量？", priority:"S级", answer:"", keywords:[], status:"未准备", confidence:0, note:"" },
   { category:"药品集采论文", question:"你的独立作者论文是否真实？", priority:"S级", answer:"", keywords:[], status:"未准备", confidence:0, note:"" },
   { category:"药品集采论文", question:"你在论文中具体负责了什么？", priority:"S级", answer:"", keywords:[], status:"未准备", confidence:0, note:"" },
@@ -210,8 +210,6 @@ const defaultPressureQuestions: PressureQuestion[] = [
   { id:"pq-15", question:"你的结果不显著怎么办？", pressureLevel:4, standardFramework:"展示对统计方法的理解", personalAnswer:"", evidence:"", avoidExpressions:"坚持显著才有意义", proficiency:0 },
 ];
 
-const defaultProfile = { name:"郭欣雨", school:"兰州大学经济学院", major:"经济学基础理论班", grade:"2023级", gpa:"89.46/100", rank:"9/38", cet6:"546", skills:["Office","Stata","R语言"], certificates:["初级会计资格证"], research:["药品集中采购对医药企业研发效率的影响研究","老龄化背景下数字鸿沟对银发消费结构的影响"], competitions:["数学竞赛省二等奖","统计建模省三等奖","节能减排省一等奖"], target:"主申应用统计专硕，兼顾经济学、金融、数字经济方向。" };
-
 
 const defaultSchools: SchoolApplication[] = [
   { id:"s1", school:"南开大学", college:"经济学院", applicationTime:"8.20 8:00(网申)\n8.21 8:00(上传材料)", specificMajor:"国际商务", degreeType:"专硕", recommendation:"", requirements:[], materials:[], status:"待关注", priority:"待评估", sourceUrl:"", notes:"报名数量不限", createdAt:"2026-07-25", updatedAt:"2026-07-25" },
@@ -242,7 +240,6 @@ const defaultSchools: SchoolApplication[] = [
 export function getDefaultData(): AppData {
   const now = new Date().toISOString();
   return {
-    profile: defaultProfile,
     tasks: rawTasks.map(t => ({ ...t, id: id(), createdAt: now })),
     papers: defaultPapers,
     materials: defaultMaterials,

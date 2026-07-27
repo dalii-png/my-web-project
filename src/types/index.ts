@@ -138,7 +138,7 @@ export interface AppData {
   studySessions?: StudySession[]
   dailyCheckIns?: DailyCheckIn[]
   schools: SchoolApplication[]
-  profile: Profile; tasks: Task[]; papers: Paper[]; materials: Material[]
+  profile?: Profile; tasks: Task[]; papers: Paper[]; materials: Material[]
   questions: Question[]; pressureQuestions: PressureQuestion[]; diaries: DiaryEntry[]
   startDate: string; lastUpdated: string
 }

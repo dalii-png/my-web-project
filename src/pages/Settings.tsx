@@ -212,11 +212,6 @@ export default function Settings({ data, onDataChange }: { data: AppData; onData
           </div>
         </div>
 
-        <div className="card"><div className="section-title">个人资料</div>
-          <div style={{ fontSize: 13 }}>
-            {[{k:"姓名",v:data.profile.name},{k:"学校",v:data.profile.school},{k:"专业",v:data.profile.major},{k:"绩点",v:data.profile.gpa},{k:"排名",v:data.profile.rank},{k:"六级",v:data.profile.cet6}].map(r => <div key={r.k} style={{display:"flex",justifyContent:"space-between",padding:"5px 0",borderBottom:"1px solid var(--color-border)"}}><span>{r.k}</span><span style={{fontWeight:500}}>{r.v}</span></div>)}
-          </div>
-        </div>
       </div>
 
       <div className="card" style={{ marginTop: 20 }}>

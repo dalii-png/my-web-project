@@ -21,7 +21,7 @@ export default function Layout({ children }: { children: ReactNode; data: AppDat
     <div className="app-layout">
       <aside className="sidebar">
         <div className="sidebar-header">
-          <h1>郭欣雨</h1>
+          <h1>学习仪表盘</h1>
           <div className="subtitle">保研冲刺作战仪表盘</div>
         </div>
         <nav className="sidebar-nav">

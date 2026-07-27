@@ -2,7 +2,7 @@ import { AppData, Task } from '../types'
 
 const STORAGE_KEY = 'baoyan_dashboard_data'
 const VERSION_KEY = 'baoyan_dashboard_version'
-const CURRENT_VERSION = 4
+const CURRENT_VERSION = 5
 
 export function loadData(): AppData | null {
   try {
@@ -68,6 +68,7 @@ function migrateData(data: AppData, fromVersion: number): AppData {
     if (fromVersion < 2) { data = migrateV1toV2(data) }
     if (fromVersion < 3) { data = migrateV2toV3(data) }
     if (fromVersion < 4) { data = migrateV3toV4(data) }
+    if (fromVersion < 5) { data = migrateV4toV5(data) }
     data.version = CURRENT_VERSION
   } catch { throw new Error('Migration failed') }
   return data
@@ -80,6 +81,11 @@ function migrateV3toV4(data: AppData): AppData {
 
 function migrateV2toV3(data: AppData): AppData {
   (data as unknown as Record<string, unknown>).studySessions = (data as unknown as Record<string, unknown>).studySessions || []
+  return data
+}
+
+function migrateV4toV5(data: AppData): AppData {
+  data.profile = undefined
   return data
 }
 

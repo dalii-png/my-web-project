@@ -90,11 +90,6 @@ export function normalizeImportData(raw: unknown): AppData {
     if (!Array.isArray(data[key])) (data as Record<string, unknown>)[key] = [];
   }
 
-  // Ensure profile
-  if (!data.profile || typeof data.profile !== "object") {
-    (data as Record<string, unknown>).profile = { name: "", school: "", major: "", grade: "", gpa: "", rank: "", cet6: "", skills: [], certificates: [], research: [], competitions: [], target: "" };
-  }
-
   // Set defaults for missing scalars
   if (!data.startDate) (data as Record<string, unknown>).startDate = "2026-07-25";
   (data as Record<string, unknown>).lastUpdated = new Date().toISOString();
